@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Layout</title>
+  <style>
+    .container {
+      background-color: darkgrey;
+      border: 1px solid black;
+      padding: 10px;
+      height: 200px; width: 600px; 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .item {
+      line-height: 50px; 
+      margin: 10px;
+      background-color: lawngreen;
+      border-radius: 10%;
+      border: 5px solid darkslategray;
+      font-size: 30px;
+      text-align: center;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">  1  </div> 
+    <div class="item">  2  </div>
+    <div class="item">  3  </div> 
+    <div class="item" style="align-self: stretch;">  4  </div>
+    <div class="item" style="align-self: flex-start;">  5  </div> 
+    <div class="item" style="align-self: flex-end;">  6  </div>
+    <div class="item" style="align-self: center;">  7  </div> 
+    <div class="item" style="align-self: baseline;">  8 </div>
+  </div>    
+</body>
+</html>

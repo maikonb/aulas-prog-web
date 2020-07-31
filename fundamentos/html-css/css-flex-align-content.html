@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Layout</title>
+  <style>
+    .container {
+      padding: 10px;
+      background-color: darkgrey;
+      border: 1px solid black;
+      height: 500px; 
+      width: 400px; 
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      align-content: space-between;
+    }
+
+    .item {
+      height: 50px;
+      margin: 10px;
+      background-color: lawngreen;
+      border-radius: 10%;
+      border: 5px solid darkslategray;
+    }
+
+    .item:nth-child(1) { min-width: 50px;  } .item:nth-child(2) { min-width: 20px;  }
+    .item:nth-child(3) { min-width: 150px; } .item:nth-child(4) { min-width: 80px;  }
+    .item:nth-child(5) { min-width: 200px; } .item:nth-child(6) { min-width: 30px;  }
+    .item:nth-child(7) { min-width: 110px; } .item:nth-child(8) { min-width: 120px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item"></div> <div class="item"></div>
+    <div class="item"></div> <div class="item"></div>
+    <div class="item"></div> <div class="item"></div>
+    <div class="item"></div> <div class="item"></div>
+  </div>    
+</body>
+</html>
