@@ -110,6 +110,41 @@
     v.toString();
 
 
+    pessoa = { nome: "Joao", idade:20, cidade:"cuiaba"};
+    pessoa.nome;
+    pessoa.idade;
+    pessoa.cidade;
+
+    function imprimePessoa() {
+        with(this) {
+            document.write("<p>" +
+                           " <b>Nome:   </b>" + nome   + "<br>" +
+                           " <b>Idade:  </b>" + idade  + "<br>" +
+                           " <b>cidade: </b>" + cidade +
+                           "</p>");
+        }
+    }
+    
+    function incrementaIdade() {
+        this.idade++;
+    }
+
+    function Pessoa(nome, idade, cidade) {
+        this.nome = nome;
+        this.idade = idade;
+        this.cidade = cidade;
+        this.imprimePessoa = imprimePessoa;
+        this.incrementaIdade = incrementaIdade;
+    }
+
+    p1 = new Pessoa("Maria",20, "Rondonopolis");
+    p2 = new Pessoa("Joao", 20, "Cuiaba");
+    p3 = new Pessoa("Zeca", 20, "Barra");
+    
+    p1.imprimePessoa();
+    p2.incrementaIdade();
+    p2.imprimePessoa();
+    p3.imprimePessoa();
 
 </script>
 </head>
