@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Javascript - Exemplo 1</title>
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+  table {
+    border-collapse: collapse;
+  }
+</style>
+<script type="text/javascript">
+
+var i=0;
+
+function my_onclick() {
+    alert("Clicou");
+}
+function my_ondblclick() {
+    alert("Clicou duas vezes");
+}
+function my_onmouseout() {
+    alert("Mouse passou");
+}
+function my_onmouseup() {
+    alert("Desapertou botao");
+}
+function my_onmousedown() {
+    alert("Apertou botao");
+}
+</script>
+</head>
+<body>
+
+<table width="600px" id="tabela" >
+<tr >
+    <td onclick="my_onclick()"> onclick() </td>
+    <td ondblclick="my_ondblclick()"> ondblclik() </td>
+    <td onmouseout="my_onmouseout()"> onmouseOut() </td>
+    <td onmouseup="my_onmouseup()"> onmouseup() </td>
+    <td onmousedown="my_onmousedown()"> onmousedown() </td>
+</tr>
+<tr>
+    <td colspan=5>CLIQUE AQUI</td>
+</tr>
+<tr>
+    <td colspan=5 id="log"> - </td>
+</tr>
+</table>
+
+</body>
+</html>
