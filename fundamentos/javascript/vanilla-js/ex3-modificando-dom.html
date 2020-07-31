@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Javascript - Exemplo 1</title>
+<script type="text/javascript">
+
+var i=0;
+
+function adiciona() {
+    x = document.getElementById("tabela");
+    if (x != null) {
+        i++;
+        linha = x.insertRow();
+        c = linha.insertCell();
+        c.innerHTML = "Celula " + i.toString();
+    }
+}
+
+function removeUltima() {
+    x = document.getElementById("tabela");
+    if (x) {
+        v = x.getElementsByTagName("tr");
+        if (v) {
+            idx = v.length;
+            if (idx>0)
+                v[idx-1].remove();
+        }
+    }
+}
+
+function removePrimeira() {
+}
+
+function removeAleatoria() {
+}
+</script>
+</head>
+<body>
+
+<table border="0">
+<tr >
+    <td ><button onclick=adiciona()>Adiciona</button></td>
+    <td ><button onclick=removeUltima()>Remove Ultima</button></td>
+    <td ><button onclick=removePrimeira()>Remove Primeira</button></td>
+    <td ><button onclick=removeAleatoria()>Remove Aleatoria</button></td>
+</tr>
+</table>
+
+<table width="600px" border="1" id="tabela">
+</table>
+
+</body>
+</html>
