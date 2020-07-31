@@ -28,9 +28,28 @@ function removeUltima() {
 }
 
 function removePrimeira() {
+    x = document.getElementById("tabela");
+    if (x) {
+        v = x.getElementsByTagName("tr");
+        if (v) {
+            if (v.length>0)
+                v[0].remove();
+        }
+    }
 }
 
 function removeAleatoria() {
+    x = document.getElementById("tabela");
+    if (x) {
+        v = x.getElementsByTagName("tr");
+        if (v) {
+            if (v.length>0) {
+                rand = Math.random()*v.length;
+                idx = Math.floor(rand);
+                v[idx].remove();
+            }
+        }
+    }
 }
 </script>
 </head>
