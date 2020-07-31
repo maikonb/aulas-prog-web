@@ -60,3 +60,24 @@ console.log('tipo array antes : ', a);
 modificarArray(a);
 console.log('tipo array depois: ', a);
 
+// Expressoes - funcoes anonimas
+
+multiplicar = function(n1, n2) {
+  return n1*n2;
+};
+console.log('resultado multiplicacao: ', multiplicar(100,3));
+
+quadrado = function(n) { return n*n; };
+cubo = function(n) { return n*n*n; };
+v = [1,2,3,4,5];
+
+mapearElementos = function(a, f) {
+  if (Array.isArray(a))
+    for(i=0;i<a.length;i++)
+      a[i] = f(a[i]);
+  return a;
+}
+
+console.log("array ao quadrado: ", mapearElementos(Array.from(v), quadrado));
+console.log("array ao cubo: ", mapearElementos(Array.from(v), cubo));
+
