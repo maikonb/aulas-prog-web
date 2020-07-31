@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>Javascript - Exemplo 1</title>
+<script type="text/javascript">
+    alert("Alerta Javascript");
+    document.write("<h1> Teste </h1>");
+    console.log("Teste");
+   
+    //numero
+    var n;
+    typeof n;
+    n = 45345.0909;
+    typeof n;
+    n.toFixed(2);
+    n.toPrecision(6);
+    n.toPrecision(7);
+    n.toPrecision(5);
+    n.toPrecision(4);
+    Math.round(n);
+    Math.floor(n);
+    Math.ceil(n);
+    n = 45645.5909;
+    Math.ceil(n);
+    Math.round(n);
+    Math.random();
+    Math.random();
+    Math.round(Math.random()*100);
+    Math.round(Math.random()*1000);
+
+    //string
+    s = n.toString();
+    typeof s;
+    s = "valor de s = " + s ;
+    s.length;
+    s.charAt(3);
+    s.fontcolor("green");
+    s;
+    document.write(s.fontcolor("green"));
+    document.write(s.fontcolor("green").fontsize(12));
+    document.write(s.fontcolor("blue").fontsize(6).toUpperCase());    
+    document.write(s.fontcolor("blue").fontsize(6).toUpperCase().bold());    
+    document.write("<p>" + s.fontcolor("green").fontsize(6).toUpperCase().bold() + "</p>");    
+    document.write("<br><table border=1> <tr><td>coluna 1</td><td>coluna2</td></tr><tr><td colspan=2>Linha 2</td></tr></table>");    
+
+    //boolean
+    b=true;
+    typeof b
+    b=10==10;
+    b=10==11;
+    alert(b);
+    b=10=="10";
+    b=10=="10.";
+    b=10.0=="10.";
+    b=10.0=="10.0000";
+    b=10.0==="10.0000";
+    
+    //Funcoes
+    function minhaFuncao() { 
+        alert("ola!"); 
+    };
+    //minhafuncao();
+    minhaFuncao();
+
+    function somar(a,b) {
+        return a+b;
+    }
+    function alertaIdade() { 
+        s = this.idade.toString();
+        alert("ola, tenho " + s + " anos de idade"); 
+    };
+    c=somar(2,3);
+
+    //Vetores
+    v = [];
+    typeof v
+    v = [1,2,3,4,5,6,7,8,9,10];
+    typeof v
+    v.length;
+
+    for (i=0; i<v.length; i++) {
+        s = v[i].toString();
+        document.write("<p>" + s + "</p>");
+    }
+
+    v[3];
+    v[0];
+    v[1];
+    v[10]=11;
+    v;
+    v.reverse();
+    v.push(12);
+    v;
+    v.pop();
+
+    v = [ [1,2,3,4],[5,6,7],[8,9]];
+    
+    v[0][0];
+    v[0][2];
+    v[0][3];
+    v[0][4];
+    v[1][0];
+    v[1][2];
+    v[1][3];
+
+    v[1].length;
+    v[0].length;
+    v[2].length;
+    document.write(v.toString());
+    delete v[0][1];
+    v.toString();
+
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
