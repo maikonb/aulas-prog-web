@@ -4,10 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Envio de Formulário</title>
+
+  <script type="text/javascript">
+
+    function nomeOk() {
+      let nomeInput = document.getElementById('id_nome');
+      let nome = nomeInput.value;
+      if (nome.trim().length == 0) {
+        alert('Faltou digitar o nome');
+        return false;
+      }
+      return true;
+    }
+
+    function idadeOk() {
+      let idadeInput = document.getElementById('id_idade');
+      let idade = idadeInput.value;
+      if (idade.trim().length == 0 || isNaN(idade) ) {
+        alert('Idade nao digitada corretamente');
+        return false;
+      }
+      return true;
+    }
+    
+    function validarForm() {
+      return nomeOk() && idadeOk();
+    }
+  </script>
+
 </head>
 <body>
 
-  <form action="http://localhost:3000" method="post">
+  <form action="http://localhost:3000" 
+        method="post"
+        onsubmit="return ( validarForm() )">
 
     Nome <input type="text" name="name_nome" id="id_nome"> 
     <br><br>
