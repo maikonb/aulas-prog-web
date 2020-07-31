@@ -28,6 +28,11 @@ function my_onmouseup() {
 function my_onmousedown() {
     alert("Apertou botao");
 }
+function my_log() {
+    x = document.getElementById("log");
+    i++;
+    x.innerHTML = "<b> i=" + i.toString() + "</b>";
+}
 </script>
 </head>
 <body>
@@ -41,7 +46,7 @@ function my_onmousedown() {
     <td onmousedown="my_onmousedown()"> onmousedown() </td>
 </tr>
 <tr>
-    <td colspan=5>CLIQUE AQUI</td>
+    <td onclick="my_log()" colspan=5>CLIQUE AQUI</td>
 </tr>
 <tr>
     <td colspan=5 id="log"> - </td>
