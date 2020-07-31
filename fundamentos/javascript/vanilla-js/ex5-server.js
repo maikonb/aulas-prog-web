@@ -19,12 +19,19 @@ const requestHandler = (req, res) => {
     });
     req.on('end', () => {
       let obj = parse(body);
-      console.log(obj);
+
+      // res.writeHead(200, { 'Content-Type': 'application/json' });
+      // res.end(JSON.stringify( obj ));
+
+      // res.writeHead(200, { 'Content-Type': 'text/plain' });
+      // res.end(JSON.stringify( obj ));
 
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(`
         <h1>Oi, recebi seus dados.</h1>
         <p> ${body} </p>
+        <p> Nome: ${obj.name_nome} </p>
+        <p> Idade: ${obj.name_idade} </p>
       `);
     });
   }  
