@@ -37,3 +37,31 @@ v = nomes.map( nome => `${nome} silva`);
 console.log('map: ', v);
 console.log('nomes: ', nomes);
 
+//
+console.log('\nfilter =>> ');
+v = nomes.map( nome => nome.includes('an'));
+console.log('v (map): ', v);
+v = nomes.filter( nome => nome.includes('an'));
+console.log('v (filter - includes "an"): ', v);
+
+//
+const pessoas = [ 
+  { nome: 'joao', idade: 20 } ,
+  { nome: 'maria', idade: 30 } ,
+  { nome: 'andre', idade: 50 } ,
+  { nome: 'rosangela', idade: 55 } ,
+  { nome: 'beatriz', idade: 11 } 
+];
+
+//
+console.log('\nfind =>> ');
+let p = pessoas.find( p => p.nome==='andre');
+console.log(p);
+
+//
+console.log('\nfindIndex =>> ');
+let idx = pessoas.findIndex( p => p.nome==='andre');
+console.log('index of "andre": ', idx);
+idx = pessoas.findIndex( p => p.nome==='antonio');
+console.log('index of "antonio": ', idx);
+
