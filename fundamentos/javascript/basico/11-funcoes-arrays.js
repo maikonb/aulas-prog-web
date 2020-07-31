@@ -25,3 +25,15 @@ v.splice(1, 1);
 console.log('removendo 1, a partir da pos 1: ', v);
 
 //
+console.log('\nslice =>> ');
+v = nomes.slice();
+console.log('v: ', v);
+console.log('slice(1,3): ', v.slice(1,3));
+console.log('v: ', v); // o slice copia uma parte do array, mas nao remove 
+
+//
+console.log('\nmap =>> ');
+v = nomes.map( nome => `${nome} silva`);
+console.log('map: ', v);
+console.log('nomes: ', nomes);
+
