@@ -22,3 +22,13 @@
   printf("<p> varFloat = %08.4f  </p>", $varFloat);
   printf("<p> varInt = %08d  </p>", $varInt);
 
+  if (is_string($varString)) 
+    echo "<h2>varString é uma String</h2>";
+  if (is_bool($varBool)) 
+    echo "<h2>varBool é um Bool</h2>";    
+  if (is_int($varInt)) 
+    echo "<h2>varInt é um Int</h2>"; 
+  if (is_float($varFloat)) 
+    echo "<h2>varFloat é um Float</h2>"; 
+
+    
