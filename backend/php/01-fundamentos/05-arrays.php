@@ -106,4 +106,47 @@
   $pessoas['maria']['uf'] = "MT"; 
 
 
-  
+  // Sintaxe diferente para fazer a mesma coisa que
+  // que o exemplo acima:
+      
+  $pessoas = [];
+
+  $pessoas['joao'] = [
+                      'nome' => "Joao",
+                      'idade' => 20,
+                      'cidade' => "Rondonopolis",
+                      'uf' => "MT"
+                     ];
+
+  $pessoas['maria'] = [
+    'nome' => "Maria",    'idade' => 24,
+    'cidade' => "Cuiaba", 'uf' => "MT"
+  ];
+                     
+  // 
+  $array_num1 = [10,20,30];
+  $array_num2 = [ 0=>10, 1=>20, 2=>30 ];
+  $array_num3 = array(10,20,30);
+  echo("<br>");
+  echo("array_num1: ");
+  var_dump($array_num1);
+  echo("<br>");
+  echo("array_num2: ");
+  var_dump($array_num2);
+  echo("<br>");
+  echo("array_num3: ");
+  var_dump($array_num3);
+  echo("<br>");
+
+  // Count
+  echo ("<br><hr>");
+  echo ("Quantidade de elementos de array_num1: " . 
+        count($array_num1) );
+
+  echo ("<br><hr>");        
+  echo ("Quantidade de elementos de pessoas: " . 
+        count($pessoas) );
+
+  echo ("<br><hr>");        
+  echo ("Quantidade de elementos de pessoas['joao']: " . 
+              count($pessoas['joao']) );
