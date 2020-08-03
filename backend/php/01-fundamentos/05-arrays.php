@@ -35,4 +35,31 @@
   echo("<p>Na posicao 'b': " . $b['b'] ."</p>");
   echo("<p>Na posicao 'letra f': " . $b['f'] ."</p>");
 
+  echo("<br><hr>");
+
+  $joao['nome'] = "Joao";
+  $joao['idade'] = 20;
+  $joao['cidade'] = "Rondonopolis";
+  $joao['uf'] = "MT";
+
+  $maria['nome'] = "Maria";
+  $maria['idade'] = 24;
+  $maria['cidade'] = "Cuiaba";
+  $maria['uf'] = "MT";
+
+  echo("<br>");
+  var_dump($joao);
+  echo("<br>");
+  var_dump($maria);
+
+  $pessoas = [$joao, $maria];
+  echo("<br>");
+  echo("Pessoas: ");
+  var_dump($pessoas);
+  echo("<br>");
+
+  // Exercício: Coloque os dados do 'joão'
+  // em $pessoas['joao'] e os dados da 'maria' em
+  // $pessoas['maria']
+
   
