@@ -52,7 +52,7 @@
   echo("<br>");
   var_dump($maria);
 
-  $pessoas = [$joao, $maria];
+  $pessoas = [$joao, $maria]; // posicao 0 e 1
   echo("<br>");
   echo("Pessoas: ");
   var_dump($pessoas);
@@ -61,5 +61,49 @@
   // Exercício: Coloque os dados do 'joão'
   // em $pessoas['joao'] e os dados da 'maria' em
   // $pessoas['maria']
+
+  $pessoas = []; 
+  $pessoas['joao'] = $joao;
+  $pessoas['maria'] = $maria;
+  echo("<br>");
+  echo("Pessoas: ");
+  var_dump($pessoas);
+  echo("<br>");
+
+  $dados_maria = $pessoas['maria'];
+  echo("<p> Dados da Maria: " .
+       "Nome: " . $dados_maria['nome'] . "  | " .
+       "Idade: " . $dados_maria['idade'] . " " .
+       "</p>");
+  echo("<p> Dados da Maria: " .
+       "Nome: " . $pessoas['maria']['nome'] . "  | " .
+       "Idade: " . $pessoas['maria']['idade'] . " " .
+       "</p>");
+
+
+  //      
+  // $maria['nome'] = "Maria";    $joao['nome'] = "Joao";
+  // $maria['idade'] = 24;        $joao['idade'] = 20;
+  // $maria['cidade'] = "Cuiaba"; $joao['cidade'] = "Rondonopolis";
+  // $maria['uf'] = "MT";         $joao['uf'] = "MT";
+
+  // $pessoas['joao'] = $joao;
+  // $pessoas['maria'] = $maria;
+
+  // Sintaxe diferente para fazer a mesma coisa que
+  // que o exemplo acima:
+    
+  $pessoas = [];
+
+  $pessoas['joao']['nome'] = "Joao";
+  $pessoas['joao']['idade'] = 20;
+  $pessoas['joao']['cidade'] = "Rondonopolis";
+  $pessoas['joao']['uf'] = "MT";
+
+  $pessoas['maria']['nome'] = "Maria";
+  $pessoas['maria']['idade'] = 24;
+  $pessoas['maria']['cidade'] = "Cuiaba";
+  $pessoas['maria']['uf'] = "MT"; 
+
 
   
