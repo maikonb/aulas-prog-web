@@ -38,3 +38,21 @@
   $pessoa["idade"] = 20;
   $pessoa["cidade"] = "Rondonopolis";
   $pessoa["uf"] = "MT";
+
+  echo "<hr>";
+  foreach($pessoa as $atributo => $valor) {
+    echo "<p>$atributo: $valor</p>";
+  }
+
+  // Exercicio: faca um laco de repeticao
+  // para imprimir todos os dados de joao e maria:
+  $pessoas['joao']['nome'] = "Joao";
+  $pessoas['joao']['idade'] = 20;
+  $pessoas['joao']['cidade'] = "Rondonopolis";
+  $pessoas['joao']['uf'] = "MT";
+
+  $pessoas['maria']['nome'] = "Maria";
+  $pessoas['maria']['idade'] = 24;
+  $pessoas['maria']['cidade'] = "Cuiaba";
+  $pessoas['maria']['uf'] = "MT"; 
+
