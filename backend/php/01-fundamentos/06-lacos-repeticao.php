@@ -56,3 +56,19 @@
   $pessoas['maria']['cidade'] = "Cuiaba";
   $pessoas['maria']['uf'] = "MT"; 
 
+  $pessoas['ana']['nome'] = "Ana";
+  $pessoas['ana']['idade'] = 34;
+  $pessoas['ana']['cidade'] = "Curitiba";
+  $pessoas['ana']['uf'] = "PR"; 
+
+  echo "<hr>";
+  foreach($pessoas as $nome => $dados) {
+    echo "<h3>$nome</h3>";
+    echo "<p>Dados: </p>";
+    echo "<ul>";
+    foreach($dados as $atributo => $valor) {
+      echo "<li>$atributo: $valor</li>";
+    }
+    echo "</ul>";
+  }
+
