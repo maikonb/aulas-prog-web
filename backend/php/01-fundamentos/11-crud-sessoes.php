@@ -1,8 +1,7 @@
 <?php
   session_start();
-  $pessoas =  isset($_SESSION['pessoas']) ? 
-                isset($_SESSION['pessoas']) : [];
-
+  $pessoas =  isset($_SESSION['pessoas']) ? $_SESSION['pessoas'] : [];
+  
   function gerarNovoId()
   {
     if (isset($_SESSION['ultimoID']))
@@ -16,7 +15,9 @@
   {
     global $pessoas;
     $id = gerarNovoId();
+    $dadosPessoa['id'] = $id;
     $pessoas[ $id ] = $dadosPessoa;
+    $_SESSION['pessoas'] = $pessoas;
   } 
 
   function empacotaDadosForm() 
@@ -38,6 +39,35 @@
       (isset($_POST['idade']) && $_POST['idade'] != "") && 
       (isset($_POST['telefone']) && $_POST['telefone'] != "") && 
       (isset($_POST['cidade']) && $_POST['cidade'] != ""));
+  }
+
+  function imprimirTabelaPessoas() 
+  {
+    global $pessoas;
+    if (count($pessoas)) {
+      echo "<table>";
+      foreach($pessoas as $pessoa) {
+        echo "<tr>";
+        echo "<form method='POST'>"; 
+        echo " <input type='hidden' name='id' value='" . 
+          $pessoa['id'] . "' >";
+        echo "  <td>" . $pessoa['id'] . "</td>";
+        echo "  <td>" . $pessoa['nome'] . "</td>";
+        echo "  <td>" . $pessoa['idade'] . "</td>";
+        echo "  <td>" . $pessoa['telefone'] . "</td>";
+        echo "  <td>" . $pessoa['cidade'] . "</td>";
+
+        echo "  <td><input type='submit' name='acao' value='Apagar'></td>";
+        echo "  <td><input type='submit' name='acao' value='Editar'></td>";
+        
+        echo "</form>";
+        echo "</tr>";
+      }
+      echo "</table>";
+    }
+    else {
+      echo "<p>Nenhum Registro Encontrado</p>";
+    }
   }
 
   function processarAcao($acao) 
@@ -71,7 +101,7 @@
 </head>
 <body>
   <h2>Cadastro de Pessoas</h2>
-  <form action="">
+  <form action="" method="POST">
     <input type="hidden" name="id" value="">
     <table>
       <tr>
@@ -107,5 +137,11 @@
       </tr>      
     </table>
   </form>
+
+  <hr>
+
+  <?php
+    imprimirTabelaPessoas();
+  ?>
 </body>
 </html>
