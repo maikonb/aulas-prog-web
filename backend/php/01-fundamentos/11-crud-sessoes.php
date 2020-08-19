@@ -89,6 +89,14 @@
     return "";
   }  
 
+  function apagarPessoa($id) {
+    global $pessoas;
+    if (isset($pessoas[ $id ] )) {
+      unset($pessoas[ $id ]);
+      $_SESSION['pessoas'] = $pessoas;
+    }
+  }
+
   function processarAcao($acao) 
   {
     switch($acao) {
@@ -104,6 +112,8 @@
           editarPessoa($_POST['id']);
         break;        
       case 'Apagar':
+        if (isset($_POST['id']) && $_POST['id'] != '')
+          apagarPessoa($_POST['id']);        
         break;
       case 'Cancelar':
         break;
