@@ -16,9 +16,10 @@
   function cadastrarPessoa($dadosPessoa) 
   {
     global $pessoas;
-    $id = gerarNovoId();
-    $dadosPessoa['id'] = $id;
-    $pessoas[ $id ] = $dadosPessoa;
+    if ( !isset($dadosPessoa['id'])) {
+      $dadosPessoa['id'] = gerarNovoId();
+    }
+    $pessoas[ $dadosPessoa['id'] ] = $dadosPessoa;
     $_SESSION['pessoas'] = $pessoas;
   } 
 
@@ -91,6 +92,7 @@
   function processarAcao($acao) 
   {
     switch($acao) {
+      case 'Atualizar':
       case 'Cadastrar':
         if (validaDadosForm()) {
           $dadosPessoa = empacotaDadosForm();
@@ -101,8 +103,6 @@
         if (isset($_POST['id']) && $_POST['id'] != '')
           editarPessoa($_POST['id']);
         break;        
-      case 'Atualizar':
-        break;
       case 'Apagar':
         break;
       case 'Cancelar':
@@ -152,9 +152,13 @@
       </tr>
       <tr>
         <td>
-          <input type="submit" value="Cadastrar" name="acao">
-          <input type="submit" value="Atualizar" name="acao">
-          <input type="reset" value="Cancelar">
+          <?php if ($emEdicao) { ?>
+            <input type="submit" value="Atualizar" name="acao">
+            <input type="submit" value="Cancelar" name="acao">
+          <?php } else { ?>
+            <input type="submit" value="Cadastrar" name="acao">
+            <input type="reset" value="Cancelar">
+          <?php } ?>
         </td>
       </tr>      
     </table>
