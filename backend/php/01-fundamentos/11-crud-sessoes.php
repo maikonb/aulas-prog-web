@@ -1,7 +1,9 @@
 <?php
   session_start();
   $pessoas =  isset($_SESSION['pessoas']) ? $_SESSION['pessoas'] : [];
-  
+  $emEdicao = false;
+  $pessoaEmEdicao = null;
+
   function gerarNovoId()
   {
     if (isset($_SESSION['ultimoID']))
@@ -41,6 +43,7 @@
       (isset($_POST['cidade']) && $_POST['cidade'] != ""));
   }
 
+
   function imprimirTabelaPessoas() 
   {
     global $pessoas;
@@ -69,6 +72,21 @@
       echo "<p>Nenhum Registro Encontrado</p>";
     }
   }
+  function editarPessoa($id) {
+    global $pessoas, $emEdicao, $pessoaEmEdicao;
+    $emEdicao = true;
+    $pessoaEmEdicao = $pessoas[ $id ];
+  }
+
+
+  function getValue($input) {
+    global $pessoas, $emEdicao, $pessoaEmEdicao;
+    if ($emEdicao) {
+      if (isset($pessoaEmEdicao[ $input ]))
+        return $pessoaEmEdicao[ $input ];
+    }
+    return "";
+  }  
 
   function processarAcao($acao) 
   {
@@ -79,6 +97,10 @@
           cadastrarPessoa($dadosPessoa);
         }
         break;      
+      case 'Editar':
+        if (isset($_POST['id']) && $_POST['id'] != '')
+          editarPessoa($_POST['id']);
+        break;        
       case 'Atualizar':
         break;
       case 'Apagar':
@@ -102,30 +124,30 @@
 <body>
   <h2>Cadastro de Pessoas</h2>
   <form action="" method="POST">
-    <input type="hidden" name="id" value="">
+    <input type="hidden" name="id" value="<?php echo getValue('id'); ?>">
     <table>
       <tr>
         <td>Nome</td>
         <td>
-          <input type="text" name="nome" value="">
+          <input type="text" name="nome" value="<?php echo getValue('nome'); ?>">
         </td>
       </tr>
       <tr>
         <td>Idade</td>
         <td>
-          <input type="number" name="idade" value="">
+          <input type="number" name="idade" value="<?php echo getValue('idade'); ?>">
         </td>
       </tr>      
       <tr>
         <td>Telefone</td>
         <td>
-          <input type="text" name="telefone" value="">
+          <input type="text" name="telefone" value="<?php echo getValue('telefone'); ?>">
         </td>
       </tr>
       <tr>
         <td>Cidade</td>
         <td>
-          <input type="text" name="cidade" value="">
+          <input type="text" name="cidade" value="<?php echo getValue('cidade'); ?>">
         </td>
       </tr>
       <tr>
