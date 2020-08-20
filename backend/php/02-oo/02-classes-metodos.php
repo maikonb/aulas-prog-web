@@ -35,7 +35,12 @@ class Cliente {
     return $this->cidade;
   }
   function getHtml() {
-    return "";
+    return "<ul>" . 
+      "<li> $this->id </li>" .
+      "<li> $this->nome </li>" .
+      "<li> $this->idade </li>" .
+      "<li> $this->cidade </li>" .
+      "</ul>";
   }    
 }
 
