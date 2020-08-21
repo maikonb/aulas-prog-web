@@ -33,4 +33,10 @@ class Aluno extends Pessoa {
     return $this->matricula; 
   }
 
+  function getHtml() {
+    return "<p>" . 
+      "Nome: $this->nome |" .
+      "Idade $this->idade |" .
+      "</p>";
+  } 
 }
