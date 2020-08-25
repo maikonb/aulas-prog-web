@@ -34,9 +34,16 @@ class Aluno extends Pessoa {
   }
 
   function getHtml() {
+    $s = "<ul>";
+    foreach($this->linguagens as $l) {
+      $s .= "<li>$l</li>";
+    }
+    $s .= "</ul>";
+
     return "<p>" . 
-      "Nome: $this->nome |" .
-      "Idade $this->idade |" .
-      "</p>";
+      "Nome: " . $this->getNome() . " | " .
+      "Idade " . $this->getIdade() . " | " .
+      "Matricula $this->matricula | " .
+      "</p>" . $s;
   } 
 }
