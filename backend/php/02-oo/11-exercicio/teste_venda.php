@@ -57,3 +57,6 @@ foreach($vendas as $venda) {
 // Obter o nome do departamento do primeiro produto da venda id 1
 // a partir do array de vendas
 
+$nomeDepartamento = $vendas[0]->getProdutos()[0]->getProduto()
+                      ->getDepartamento()->getNome();
+echo "<h2>$nomeDepartamento</h2>";
