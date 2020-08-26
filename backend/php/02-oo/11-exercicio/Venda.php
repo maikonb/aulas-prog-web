@@ -63,15 +63,15 @@ class Venda {
 
   public function __toString() {
     $s = "";
-    $s += "<p>IdVenda $this->idVenda </p>";
-    $s += "<p>Cliente " . $this->cliente->getNome() . "  </p>";
-    $s += "<p>Vendedor " . $this->cliente->getNome() . "  </p>";
-    $s += "<p>Total R$ $this->total </p>";
-    $s += "<ul>";
+    $s .= "<p>IdVenda $this->idVenda </p>";
+    $s .= "<p>Cliente " . $this->cliente->getNome() . "  </p>";
+    $s .= "<p>Vendedor " . $this->cliente->getNome() . "  </p>";
+    $s .= "<p>Total R$ $this->total </p>";
+    $s .= "<ul>";
     foreach($this->produtos as $vp) {
-      $s += "<li>" . $vp . "</li>";
+      $s .= "<li>" . $vp . "</li>";
     }
-    $s += "</ul>";
+    $s .= "</ul>";
     return $s;
   }
 }
