@@ -40,7 +40,7 @@ CREATE TABLE `produtos` (
   PRIMARY KEY (`id`),
   KEY `fk_produtos_marcas_idx` (`marca_id`),
   CONSTRAINT `fk_produtos_marcas` FOREIGN KEY (`marca_id`) REFERENCES `marcas` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 
