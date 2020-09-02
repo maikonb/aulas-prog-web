@@ -45,3 +45,20 @@ function listarMarcas($marcas) {
   else
     echo "<p>Nenhuma marca cadastrada.</p>\n";
 }
+
+
+function removeMarca($id) 
+{
+  global $mysqli;
+
+  $sql = "DELETE FROM marcas where id=?";
+  $stmt = $mysqli->prepare($sql);
+
+  if ($stmt) {
+    $stmt->bind_param('i', $id); 
+    $ret = $stmt->execute();
+    $stmt->close();
+    return $ret;
+  }
+  return false;
+}
