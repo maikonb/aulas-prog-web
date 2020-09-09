@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/rota1/rota2/rota3', function () {
+    return "Seja bem vindo! Hello World Laravel!";
+});
