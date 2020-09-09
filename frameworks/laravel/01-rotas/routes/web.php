@@ -30,3 +30,11 @@ Route::get('/nome/{nome?}', function($nome=null) {
         return "Hello, $nome";
     return "Faltou o nome no parametro.";
 });
+
+Route::get('/regras/{nome}/{n}', function($nome, $n) {
+    for ($i=0;$i<$n;$i++) {
+        echo "[$i] Olá! Seja benvindo, $nome<br>";
+    }
+})
+->where('nome', '[A-Za-z]+')
+->where('n', '[0-9]+');
