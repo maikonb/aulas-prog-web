@@ -20,3 +20,13 @@ Route::get('/', function () {
 Route::get('/rota1/rota2/rota3', function () {
     return "Seja bem vindo! Hello World Laravel!";
 });
+
+Route::get('/hello/{nome}/{sobrenome}', function($nome, $sobrenome) {
+    return "Seja bem vindo ao Laravel, $nome $sobrenome";
+});
+
+Route::get('/nome/{nome?}', function($nome=null) {
+    if (isset($nome))
+        return "Hello, $nome";
+    return "Faltou o nome no parametro.";
+});
