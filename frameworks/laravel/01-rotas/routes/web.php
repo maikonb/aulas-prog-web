@@ -49,7 +49,19 @@ Route::get('/produtos', function() {
     echo "</ol>";
 })->name('produtos');
 
+Route::prefix('app')->group(function(){
 
-Route::get('/app', function() {
-    return view('app');
+    Route::get('/', function() {
+        return view('app');
+    })->name('app.index');
+    
+    Route::get('/usuario', function() {
+        return view('usuario');
+    })->name('app.usuario');
+    
+    Route::get('/perfil', function() {
+        return view('perfil');
+    })->name('app.perfil');
+
 });
+
