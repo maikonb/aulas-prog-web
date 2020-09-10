@@ -65,3 +65,12 @@ Route::prefix('app')->group(function(){
 
 });
 
+Route::get('produtos1', function() {
+    return redirect('produtos');
+});
+
+Route::get('produtos2', function() {
+    return redirect()->route('produtos');
+});
+
+Route::redirect('produtos3', 'produtos', 301);
