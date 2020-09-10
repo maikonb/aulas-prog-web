@@ -49,3 +49,7 @@ Route::get('/produtos', function() {
     echo "</ol>";
 })->name('produtos');
 
+
+Route::get('/app', function() {
+    return view('app');
+});
