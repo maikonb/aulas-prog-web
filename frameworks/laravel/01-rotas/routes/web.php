@@ -33,8 +33,19 @@ Route::get('/nome/{nome?}', function($nome=null) {
 
 Route::get('/regras/{nome}/{n}', function($nome, $n) {
     for ($i=0;$i<$n;$i++) {
-        echo "[$i] Olá! Seja benvindo, $nome<br>";
+        echo "[$i] Olá! Seja bem vindo, $nome<br>";
     }
 })
 ->where('nome', '[A-Za-z]+')
 ->where('n', '[0-9]+');
+
+Route::get('/produtos', function() {
+    echo "<h1>Produtos</h1>";
+    echo "<ol>";
+    echo "<li>Notebook</li>";
+    echo "<li>Impressora</li>";
+    echo "<li>Mouse</li>";
+    echo "<li>Teclado</li>";
+    echo "</ol>";
+})->name('produtos');
+
