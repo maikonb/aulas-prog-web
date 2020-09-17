@@ -20,3 +20,6 @@ Route::get('/products', [FirstController::class, 'productsView']);
 
 Route::get('/products/view_params', 
     [FirstController::class, 'productsViewParams']);
+
+Route::get('/products/info/{index?}', 
+    [FirstController::class, 'productsInfo'])->name('productsInfo');

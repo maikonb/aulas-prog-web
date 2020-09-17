@@ -44,4 +44,18 @@ class FirstController extends Controller
         ]);
         */
     }
+
+    public function productsInfo($index=null) {
+        $products = [
+            ['id' => 110, 'name'=>'Notebook', 'description' => "Descripton about Notebook"] ,
+            ['id' => 120, 'name'=>'Printer',  'description' => "Descripton about Printer"] ,
+            ['id' => 130, 'name'=>'Mouse',    'description' => "Descripton about Mouse"] ,
+            ['id' => 140, 'name'=>'Keyboard', 'description' => "Descripton about Keyboard"] 
+        ];
+        $title = 'Report - All Products';
+        $selected = (($index!=null) && ($index < count($products))) ?  
+            $products[ $index ] : null;
+        return view('products_info', 
+            compact(['products', 'title', 'selected']));
+    }
 }
