@@ -7,7 +7,12 @@
   <li>
     {{ $c['id'] }} | {{ $c['name'] }} |
     <a href="{{ route('clients.show', $c['id']) }}">Info</a> |
-    <a href="{{ route('clients.edit', $c['id']) }}">Edit</a>
+    <a href="{{ route('clients.edit', $c['id']) }}">Edit</a> | 
+    <form action="{{ route('clients.destroy', $c['id']) }}" method="POST">
+      @csrf
+      @method('delete')
+      <input type="submit" value="Remove">
+    </form>
   </li>
 @endforeach
 </ul>
