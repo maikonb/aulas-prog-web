@@ -74,7 +74,10 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $clients = session('clients', $this->clients);
+        $index = $this->getIndex($id, $clients);
+        $client = $clients[ $index ];        
+        return view('clients.edit', compact('client') );
     }
 
     /**
@@ -86,7 +89,12 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $clients = session('clients', $this->clients);
+        $index = $this->getIndex($id, $clients);
+        $clients[ $index ]['name'] = $request->name;
+        session(['clients' => $clients ]);
+
+        return redirect()->route('clients.index');
     }
 
     /**
