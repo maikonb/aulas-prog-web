@@ -5,7 +5,8 @@
 <ul>
 @foreach($clients as $c) 
   <li>
-    {{ $c['id'] }} | {{ $c['name'] }}
+    {{ $c['id'] }} | {{ $c['name'] }} |
+    <a href="{{ route('clients.show', $c['id']) }}">Info</a>
   </li>
 @endforeach
 </ul>

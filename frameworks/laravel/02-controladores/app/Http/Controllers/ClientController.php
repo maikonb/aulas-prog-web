@@ -60,7 +60,10 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        $clients = session('clients', $this->clients);
+        $index = $this->getIndex($id, $clients);
+        $client = $clients[ $index ];
+        return view('clients.show', compact('client'));
     }
 
     /**
@@ -95,5 +98,11 @@ class ClientController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function getIndex($id, $clients) {
+        $ids = array_column($clients, 'id');
+        $index = array_search($id, $ids);
+        return $index;
     }
 }
