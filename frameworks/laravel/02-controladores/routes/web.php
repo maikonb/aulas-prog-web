@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FirstController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,5 @@ Route::get('/products/view_params',
 
 Route::get('/products/info/{index?}', 
     [FirstController::class, 'productsInfo'])->name('productsInfo');
+
+Route::resource('/clients', ClientController::class);
