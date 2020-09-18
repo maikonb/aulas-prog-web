@@ -31,7 +31,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
@@ -42,7 +42,14 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $clients = session('clients', $this->clients);
+        $last = end($clients);
+        $id = ($last) ? ($last['id'] + 10) : 10;
+        $name = $request->name;
+        $clients[] = [ 'id' => $id, 'name'=>$name ];
+        session(['clients' => $clients ]);
+
+        return redirect()->route('clients.index');
     }
 
     /**
