@@ -19,4 +19,6 @@ class Marca extends Model
     // indicar ao Laravel qual o nome correto da 
     // tabela.
     protected $table = 'marcas';
+
+    protected $fillable = ['nome'];
 }
