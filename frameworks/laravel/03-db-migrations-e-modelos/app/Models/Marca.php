@@ -21,4 +21,9 @@ class Marca extends Model
     protected $table = 'marcas';
 
     protected $fillable = ['nome'];
+
+    public function produtos() 
+    {
+        return $this->hasMany("App\Models\Produto");
+    }
 }
