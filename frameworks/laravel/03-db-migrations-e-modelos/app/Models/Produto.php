@@ -13,4 +13,10 @@ class Produto extends Model
     {
         return $this->belongsTo("App\Models\Marca");
     }
+
+    public function departamentos()
+    {
+        return $this->belongsToMany(
+            'App\Models\Departamento', 'produto_departamento');
+    }
 }
